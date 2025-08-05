@@ -1,0 +1,53 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "file",
+        "source": "~/.config/fastfetch/logo.txt",
+        "padding": {
+            "top": 2,
+            "left": 2
+        }
+    },
+    "modules": [
+        "break",
+        { "type": "custom", "format": "┌───────────────────────────────────────────────┐" },
+        { "type": "host", "key": "     Chassis", "keyColor": "blue", "keyBold": true },
+        { "type": "os", "key": "     OS", "keyColor": "red", "keyBold": true },
+        { "type": "kernel", "key": "     Kernel", "keyColor": "magenta", "keyBold": true },
+        { "type": "packages", "key": "   󰏖  Packages", "keyColor": "green", "keyBold": true },
+        { "type": "display", "key": "     Display", "keyColor": "cyan", "keyBold": true },
+        { "type": "terminal", "key": "     Terminal", "keyColor": "yellow", "keyBold": true },
+        { "type": "wm", "key": "   󰍹  WM", "keyColor": "yellow", "keyBold": true },
+        { "type": "custom", "format": "└───────────────────────────────────────────────┘" },
+        "break",
+        {
+            "type": "title",
+            "key": "  ",
+            "format": " {user-name} @ {host-name}"
+        },
+        "break",
+        { "type": "custom", "format": "┌───────────────────────────────────────────────┐" },
+        { "type": "cpu", "key": "     CPU", "keyColor": "blue", "keyBold": true },
+        { "type": "gpu", "key": "     GPU", "keyColor": "red", "keyBold": true },
+        { "type": "custom", "format": "     GPU Driver: i915", "keyColor": "magenta", "keyBold": true },
+        { "type": "memory", "key": "     Memory", "keyColor": "green", "keyBold": true },
+        { "type": "uptime", "key": "   神 Uptime", "keyColor": "yellow", "keyBold": true },
+        {
+            "type": "disk",
+            "keyIcon": "",
+            "key": " {#magenta}  {icon}  OS Age",
+            "folders": "/", // On macOS, "/System/Volumes/VM" works for me
+            "format": "{days} days"
+        },
+        {
+            "type": "custom",
+            "format": "└───────────────────────────────────────────────┘" // `\u001b` is `\033`, or `\e`
+        },
+        "break",
+        {
+            "type": "colors",
+            "preset": "catppuccin-mocha",
+            "symbol": "circle"
+        }
+    ]
+}
